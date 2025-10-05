@@ -193,10 +193,4 @@ RMSE	       1945.6
 
 ✅ Proper data preprocessing (feature extraction + encoding) greatly improved model performance.
 
-✅ Could be further enhanced by:
 
-* Using Gradient Boosting / XGBoost
-
-* Applying feature scaling (for non-tree models)
-
-* Including holiday/seasonal data or route distances
