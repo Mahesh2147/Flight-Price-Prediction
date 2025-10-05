@@ -1,4 +1,4 @@
-# Flight-Price-Prediction
+ # Flight-Price-Prediction
 
 ## 🧭 Project Overview
 
@@ -9,11 +9,11 @@ The problem is treated as a supervised regression task using machine learning al
 
 The dataset used is typically named Flight_Fare.xlsx, containing 10,683 rows and 11 columns:
 
-ColumnName	            Description
+ColumnName	                  Description
 
-Airline	            Name of the airline (e.g., Jet Airways, IndiGo, Air India)
+Airline	                  Name of the airline (e.g., Jet Airways, IndiGo, Air India)
 
-Date_of_Journey   	Date when the flight takes off
+Date_of_Journey   	      Date when the flight takes off
 
 Source	            City of origin
 
