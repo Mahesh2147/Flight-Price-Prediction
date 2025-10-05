@@ -10,17 +10,29 @@ The problem is treated as a supervised regression task using machine learning al
 The dataset used is typically named Flight_Fare.xlsx, containing 10,683 rows and 11 columns:
 
 ColumnName	            Description
+
 Airline	            Name of the airline (e.g., Jet Airways, IndiGo, Air India)
+
 Date_of_Journey   	Date when the flight takes off
+
 Source	            City of origin
+
 Destination       	City of arrival
+
 Route	             Full route of the flight (e.g., DEL → BOM → BLR)
+
 Dep_Time          	Departure time
+
 Arrival_Time	      Arrival time
+
 Duration	          Total travel time
+
 Total_Stops	       Number of stops (e.g., 0, 1, 2+)
+
 Additional_Info	   Other info such as meal, baggage, etc.
+
 Price	             Target variable (ticket price)
+
 ## 🧹 Data Preprocessing
 1️⃣ Handling Missing Values
 
