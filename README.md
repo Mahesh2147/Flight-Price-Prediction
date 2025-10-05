@@ -46,9 +46,9 @@ Price	             Target variable (ticket price)
 
 * The Date_of_Journey column was split into:
 
-* Journey_date
+    * Journey_date
 
-* Journey_month
+    * Journey_month
 
 (Year was dropped because all records were from 2019)
 
@@ -118,8 +118,11 @@ Each model was trained and evaluated using standard regression metrics.
 ## 📊 Model Evaluation (Before Tuning)
 
 Model	              R² Score	    MAE	       MSE
+
 Linear Regression	  0.43	       2472.6	   12,069,000
+
 Decision Tree	      0.60       	1416.8	   8,396,700
+
 Random Forest	      0.79       	1198.5	   4,274,800
 
 ➡️ Random Forest performed best with the **highest R² (0.79)**  and lowest errors.
