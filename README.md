@@ -22,96 +22,96 @@ Total_Stops	       Number of stops (e.g., 0, 1, 2+)
 Additional_Info	   Other info such as meal, baggage, etc.
 Price	             Target variable (ticket price)
 ## 🧹 Data Preprocessing
-* 1️⃣ Handling Missing Values
+1️⃣ Handling Missing Values
 
-Only the Total_Stops column had 1 missing value.
+* Only the Total_Stops column had 1 missing value.
 
-It was replaced with the most frequent value (‘1’)
+* It was replaced with the most frequent value (‘1’)
 
-All other columns were complete after that.
+* All other columns were complete after that.
 
 2️⃣ Date Conversion
 
-The Date_of_Journey column was split into:
+* The Date_of_Journey column was split into:
 
-Journey_date
+* Journey_date
 
-Journey_month
+* Journey_month
 
 (Year was dropped because all records were from 2019)
 
 3️⃣ Time Conversion
 
-Dep_Time → Extracted into Dep_hour and Dep_min
+* Dep_Time → Extracted into Dep_hour and Dep_min
 
-Arrival_Time → Extracted into Arrival_hour and Arrival_min
+* Arrival_Time → Extracted into Arrival_hour and Arrival_min
 
-Original string columns (Dep_Time, Arrival_Time) were dropped.
+* Original string columns (Dep_Time, Arrival_Time) were dropped.
 
 4️⃣ Duration Conversion
 
-Duration values like “2h 50m” or “5h” were converted to total minutes.
+* Duration values like “2h 50m” or “5h” were converted to total minutes.
 
-Duration_hr and Duration_min were extracted, then combined:
-Duration = Duration_hr*60 + Duration_min
+   * Duration_hr and Duration_min were extracted, then combined:
+     Duration = Duration_hr*60 + Duration_min
 
-The temporary columns were deleted.
+* The temporary columns were deleted.
 
 5️⃣ Categorical Encoding
 
-Label encoding was used for:
+* Label encoding was used for:
 
-Airline
+  * Airline
 
-Source
+  * Source
 
-Destination
+  * Destination
 
-No one-hot encoding or scaling was applied since tree-based models can handle integer-coded categories.
+* No one-hot encoding or scaling was applied since tree-based models can handle integer-coded categories.
 
 6️⃣ Dropping Unnecessary Columns
 
-Route, Additional_Info, and Date_of_Journey were dropped (low or redundant info).
+* Route, Additional_Info, and Date_of_Journey were dropped (low or redundant info).
 
 After cleaning, the final dataset contained only numeric columns suitable for modeling.
 
-🧠 Feature Engineering Summary
+## 🧠 Feature Engineering Summary
 
 Final feature list used for modeling:
 
-['Airline', 'Source', 'Destination', 'Total_Stops', 
- 'Journey_date', 'Journey_month', 'Dep_hour', 'Dep_min', 
- 'Arrival_hour', 'Arrival_min', 'Duration']
+   ['Airline', 'Source', 'Destination', 'Total_Stops', 
+    'Journey_date', 'Journey_month', 'Dep_hour', 'Dep_min', 
+    'Arrival_hour', 'Arrival_min', 'Duration']
 
-⚙️ Model Building
+## ⚙️ Model Building
 
 The dataset was split into:
 
-X (features) → All columns except Price
+* X (features) → All columns except Price
 
-y (target) → Price
+* y (target) → Price
 
-Train-test split: 80% training, 20% testing (random_state=42)
+* Train-test split: 80% training, 20% testing (random_state=42)
 
-Models Trained
+## Models Trained
 
-Linear Regression
+* Linear Regression
 
-Decision Tree Regressor
+* Decision Tree Regressor
 
-Random Forest Regressor
+* Random Forest Regressor
 
 Each model was trained and evaluated using standard regression metrics.
 
-📊 Model Evaluation (Before Tuning)
-Model	R² Score	MAE	MSE
-Linear Regression	0.43	2472.6	12,069,000
-Decision Tree	0.60	1416.8	8,396,700
-Random Forest	0.79	1198.5	4,274,800
+## 📊 Model Evaluation (Before Tuning)
+Model	              R² Score	    MAE	       MSE
+Linear Regression	  0.43	       2472.6	   12,069,000
+Decision Tree	      0.60       	1416.8	   8,396,700
+Random Forest	      0.79       	1198.5	   4,274,800
 
-➡️ Random Forest performed best with the highest R² (0.79) and lowest errors.
+➡️ Random Forest performed best with the ## highest R² (0.79)##  and lowest errors.
 
-🧩 Hyperparameter Tuning
+## 🧩 Hyperparameter Tuning
 
 The Random Forest model was further tuned using RandomizedSearchCV.
 Key parameters optimized:
