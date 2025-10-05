@@ -104,70 +104,73 @@ The dataset was split into:
 Each model was trained and evaluated using standard regression metrics.
 
 ## 📊 Model Evaluation (Before Tuning)
+
 Model	              R² Score	    MAE	       MSE
 Linear Regression	  0.43	       2472.6	   12,069,000
 Decision Tree	      0.60       	1416.8	   8,396,700
 Random Forest	      0.79       	1198.5	   4,274,800
 
-➡️ Random Forest performed best with the ## highest R² (0.79)##  and lowest errors.
+➡️ Random Forest performed best with the **highest R² (0.79)**  and lowest errors.
 
 ## 🧩 Hyperparameter Tuning
 
 The Random Forest model was further tuned using RandomizedSearchCV.
 Key parameters optimized:
 
-n_estimators (number of trees)
+* n_estimators (number of trees)
 
-max_depth
+* max_depth
 
-min_samples_split
+* min_samples_split
 
-min_samples_leaf
+* min_samples_leaf
 
-max_features
+* max_features
 
-bootstrap
+* bootstrap
 
-Best Parameters Found
+**Best Parameters Found**
 
 Example best configuration:
 
-n_estimators = 400
-max_depth = 30
-min_samples_split = 5
-max_features = 'sqrt'
+  n_estimators = 400
+  max_depth = 30
+  min_samples_split = 5
+  max_features = 'sqrt'
 
-Tuned Model Performance
-Metric	Score
-R² Score	0.821
-MAE	1212.4
-MSE	3,783,600
-RMSE	1945.6
-📈 Observations
+**Tuned Model Performance**
 
-Random Forest Regressor gave the best overall performance with R² ≈ 0.82.
+Metric	        Score
+R² Score	      0.821
+MAE	            1212.4
+MSE	            3,783,600
+RMSE	          1945.6
 
-The model successfully captured non-linear relationships between features and price.
+## 📈 Observations
 
-The features most strongly influencing price include:
+* Random Forest Regressor gave the best overall performance with R² ≈ 0.82.
 
-Airline
+* The model successfully captured non-linear relationships between features and price.
 
-Duration
+* The features most strongly influencing price include:
 
-Total Stops
+  * Airline
 
-Departure/Arrival times
+  * Duration
 
-🧾 Final Conclusion
+  * Total Stops
+
+  * Departure/Arrival times
+
+## 🧾 Final Conclusion
 
 ✅ The project effectively predicts flight ticket prices using machine learning.
 ✅ Random Forest model achieved ~82% accuracy (R² = 0.821).
 ✅ Proper data preprocessing (feature extraction + encoding) greatly improved model performance.
 ✅ Could be further enhanced by:
 
-Using Gradient Boosting / XGBoost
+* Using Gradient Boosting / XGBoost
 
-Applying feature scaling (for non-tree models)
+* Applying feature scaling (for non-tree models)
 
-Including holiday/seasonal data or route distances
+* Including holiday/seasonal data or route distances
