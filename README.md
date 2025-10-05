@@ -1,11 +1,11 @@
 # Flight-Price-Prediction
 
-# 🧭 Project Overview
+## 🧭 Project Overview
 
 The goal of this project is to predict flight prices based on various flight-related factors such as airline, source, destination, duration, number of stops, and departure/arrival times.
 The problem is treated as a supervised regression task using machine learning algorithms.
 
-# 📂 Dataset Details
+## 📂 Dataset Details
 
 The dataset used is typically named Flight_Fare.xlsx, containing 10,683 rows and 11 columns:
 
@@ -22,7 +22,7 @@ Total_Stops	       Number of stops (e.g., 0, 1, 2+)
 Additional_Info	   Other info such as meal, baggage, etc.
 Price	             Target variable (ticket price)
 ## 🧹 Data Preprocessing
-1️⃣ Handling Missing Values
+* 1️⃣ Handling Missing Values
 
 Only the Total_Stops column had 1 missing value.
 
